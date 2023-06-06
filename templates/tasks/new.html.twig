@@ -1,11 +1,18 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}New Tasks{% endblock %}
+{% block title %}New Tasks
+{% endblock %}
 
 {% block body %}
-    <h1>Create new Tasks</h1>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6 mt-5 offset-md-3">
+				<h1>Create new Tasks</h1>
 
-    {{ include('tasks/_form.html.twig') }}
+				{{ include('tasks/_form.html.twig') }}
 
-    <a href="{{ path('app_tasks_index') }}">back to list</a>
+				<a href="{{ path('app_tasks_index') }}">Back to list</a>
+			</div>
+		</div>
+	</div>
 {% endblock %}

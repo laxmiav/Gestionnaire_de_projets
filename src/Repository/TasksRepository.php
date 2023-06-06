@@ -47,7 +47,7 @@ class TasksRepository extends ServiceEntityRepository
 
     $entityManager = $this->getEntityManager();
     $query = $entityManager->createQuery(
-        'SELECT s
+        'SELECT t
         FROM App\Entity\Tasks t
         JOIN t.Project p
         WHERE p.id = :projectid'
