@@ -35,9 +35,9 @@
 					</tbody>
 				</table>
 
-				<a href="{{ path('app_projets_index') }}">back to list</a>
+				<a class="btn btn-ls btn-primary" href="{{ path('app_projets_index') }}">Back to list</a>
 
-				<a href="{{ path('app_projets_edit', {'id': projet.id}) }}">edit</a>
+				<a class="btn btn-ls btn-primary"href="{{ path('app_projets_edit', {'id': projet.id}) }}">Edit</a>
 
 				{{ include('projets/_delete_form.html.twig') }}
 			</div>

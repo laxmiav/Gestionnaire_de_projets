@@ -30,8 +30,8 @@
 							<td>{{ task.Priority }}</td>
 							<td>{{ task.Status }}</td>
 							<td>
-								<a href="{{ path('app_tasks_show', {'id': task.id}) }}">show</a>
-								<a href="{{ path('app_tasks_edit', {'id': task.id}) }}">edit</a>
+								<a class="btn btn-ls btn-primary"  href="{{ path('app_tasks_show', {'id': task.id}) }}">Show</a>
+								<a class="btn btn-ls btn-primary"  href="{{ path('app_tasks_edit', {'id': task.id}) }}">Edit</a>
 							</td>
 						</tr>
 					{% else %}
@@ -42,7 +42,7 @@
 				</tbody>
 			</table>
 
-			<a href="{{ path('app_tasks_new') }}">Create new</a>
+			<a class="btn btn-ls btn-primary" href="{{ path('app_tasks_new') }}">Create new</a>
 		</div>
 	</div>
 </div>
