@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Tasks index
+{% endblock %}
+
+{% block body %}
+	<div class="container">
+		<div class="row justify-content-md-center">
+			<div class="mt-5">
+				<h1>Tasks index</h1>
+				<table class="table">
+					<thead class="thead-dark"></thead>
+					<tr>
+						<th>Id</th>
+						<th>Name</th>
+						<th>Description</th>
+						<th>Deadline_date</th>
+						<th>Priority</th>
+						<th>Status</th>
+						<th>actions</th>
+					</tr>
+				</thead>
+				<tbody>
+					{% for task in tasks %}
+						<tr>
+							<td>{{ task.id }}</td>
+							<td>{{ task.name }}</td>
+							<td>{{ task.Description }}</td>
+							<td>{{ task.DeadlineDate ? task.DeadlineDate|date('Y-m-d') : '' }}</td>
+							<td>{{ task.Priority }}</td>
+							<td>{{ task.Status }}</td>
+							<td>
+								<a class="btn btn-ls btn-primary"  href="{{ path('app_tasks_show', {'id': task.id}) }}">Show</a>
+								<a class="btn btn-ls btn-primary"  href="{{ path('app_tasks_edit', {'id': task.id}) }}">Edit</a>
+							</td>
+						</tr>
+					{% else %}
+						<tr>
+							<td colspan="7">no records found</td>
+						</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+
+			<a class="btn btn-ls btn-primary" href="{{ path('app_tasks_new') }}">Create new</a>
+		</div>
+	</div>
+</div>
+{% endblock %}

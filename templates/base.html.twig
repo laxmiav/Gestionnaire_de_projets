@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>
+			{% block title %}Gestionnaire de Project
+			{% endblock %}
+		</title>
+		<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+		{% block stylesheets %}
+			<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+		{% endblock %}
+
+		{% block javascripts %}{% endblock %}
+	</head>
+	<body>
+
+		<header>
+			<!-- Navbar goes here -->
+			<nav class="bg-white shadow-lg">
+				<div class=" mx-auto px-4 sm:flex justify-between">
+					<div
+						class="flex justify-between ">
+
+						<!-- Website Logo -->
+						<div class="row">
+							<div class="col">
+								<a href="{{ path('app_projets_index') }}" class="flex items-center py-4 px-2">
+
+									<h3>Project Manager</h3>
+								</a>
+							</div>
+
+							<div class="col col-lg-2 mt-4">
+								{% if app.user %}
+
+									<h6>Welcome
+										{{ app.user.userIdentifier }}</h6>
+
+
+									<a href="{{ path('app_logout') }}">Logout</a>
+								{% endif %}
+							</div>
+						</div>
+
+
+					</div>
+
+
+				</div>
+
+
+			</div>
+
+		</div>
+	</nav></header>
+	{% block body %}
+	{% endblock %}
+	
+	<footer class="footer fixed-bottom-auto container "><div class="text-center mt-4">
+<div>
+	<p>Thanks for Using Project Manager</p>
+	<div class="copyright">&copy;&nbsp;<script>
+			document.write(new Date().getFullYear());
+		</script> By <strong>
+			<span>Muthulakshmi</span>
+		</strong></div>
+</div></footer></body></html>
